@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Fast Tasty custom colors
+                'orange': {
+                    100: '#FFF1E0',
+                    200: '#FFE0B7',
+                    300: '#FFCA85',
+                    400: '#F4A21A', // Laranja médio
+                    500: '#F79616', // Laranja vibrante
+                    600: '#FOAD1D', // Alaranjado forte
+                    700: '#D2941F', // Marrom claro
+                    800: '#B37A20', // Marrom escuro
+                    900: '#8C5D1A',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				xl: '1rem',
+				'2xl': '1.5rem',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,12 +99,20 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'slide-in': {
+                    '0%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(0)' },
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'slide-in': 'slide-in 0.3s ease-out',
+			},
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
